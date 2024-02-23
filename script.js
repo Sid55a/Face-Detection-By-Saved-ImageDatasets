@@ -59,7 +59,9 @@ function loadLabeledImages() {
       const descriptions = [];
       for (let i = 1; i <= 2; i++) {
         const img = await faceapi.fetchImage(
-          `https://github.com/Sid55a/Face-Detection-By-Saved-Images/tree/main/labeled_images/${label}/${i}.jpg`
+          
+          `https://raw.githubusercontent.com/Sid55a/Face-Detection-By-Saved-Images/main/labeled_images/${label}/${i}.jpg`,
+          { mode: "no-cors" }
         );
         const detections = await faceapi
           .detectSingleFace(img)
